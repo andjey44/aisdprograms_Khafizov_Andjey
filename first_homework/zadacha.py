@@ -38,7 +38,6 @@ class LinkedArray:
     def delete(self):
         if self.length == 0:
             return 0
-
         now = self.head.pred
         now.internal[self.ourind()] = None
         if self.ourind() == 0:
@@ -95,13 +94,14 @@ class LinkedArray:
         return self.length
 
 
-la = LinkedArray()
-for i in range(1, 20, 3):
-    la.append(i)
-    print(la)
+if __name__ == '__main__':
+    la = LinkedArray()
+    for i in range(1, 20, 3):
+        la.append(i)
+        print(la)
 
-for i in range(5):
-    la.delete()
-    print(la)
+    for i in range(5):
+        la.delete()
+        print(la)
 
-print(la[1], la[6])
+    print(la[1], la[6])
